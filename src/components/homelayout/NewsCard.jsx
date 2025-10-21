@@ -1,8 +1,9 @@
 import React from "react";
 import { FaBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const {
+  const {id,
     title,
     rating,
     total_view,
@@ -50,9 +51,9 @@ const NewsCard = ({ news }) => {
       <div className="px-4 py-3 text-gray-600 text-sm">
         <p>
           {details.slice(0, 200)}...
-          <span className="text-orange-600 font-medium cursor-pointer hover:underline ml-1">
+          <Link to={`/news-details/${id}`} className="text-orange-600 font-medium cursor-pointer hover:underline ml-1">
             Read More
-          </span>
+          </Link>
         </p>
       </div>
 
